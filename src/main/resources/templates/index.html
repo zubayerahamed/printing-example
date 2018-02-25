@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlnh:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1"/>
+		<title>Insert title here</title>
+		<style type="text/css">
+			table{
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+			td{
+				text-align: center;
+				padding: 5px 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<a th:href="@{/print}" target="_blank">Print</a> || <a th:href="@{/csv}" target="_blank">CSV</a>
+		<hr/>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>NAME</th>
+					<th>EMAIL</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="row : ${students}">
+					<td th:text="${row.id}"></td>
+					<td th:text="${row.name}"></td>
+					<td th:text="${row.email}"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</body>
+</html>
